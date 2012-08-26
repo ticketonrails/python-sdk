@@ -1,4 +1,4 @@
-api-python-sdk
+python-sdk
 ==============
 
 Ticket on Rails Api Python Client
