@@ -69,6 +69,17 @@ class TorApi(object):
         response = self.request("/tickets", "POST", params)
         return response
 
+    def get_tickets(self, page, limit):
+        params = {}
+        params["page"] = page
+        params["limit"] = limit
+        response = self.request("/tickets", "GET", params)
+        return response
+
+    def get_ticket(self, ticket_id):
+        response = self.request("/tickets/%s" % ticket_id, "GET", {})
+        return response
+
 
 class TorApiException(Exception):
     def __init__(self, message):

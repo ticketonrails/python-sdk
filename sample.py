@@ -19,3 +19,10 @@ ticket["attachment"] = "attachment.txt"
 
 ticket_result = api.new_ticket(ticket)
 print "ticket %s, id %s" % (ticket_result["ticket"], ticket_result["id"])
+
+tickets_list = api.get_tickets(1, 20)
+print tickets_list
+
+if len(tickets_list) > 0:
+    ticket = api.get_ticket(tickets_list['tickets'][0]['id'])
+    print ticket
